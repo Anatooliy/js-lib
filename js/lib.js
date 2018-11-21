@@ -71,4 +71,22 @@ var megaLib = {
         } 
         return arrFeb;                
     },
+
+    myDeepCopy: function(object){
+        return JSON.parse(JSON.stringify(object));
+    },
+
+    extend : function(source, bonus) {
+        Object.assign(source, bonus);
+    },
+
+    powBuilder: function(pow){
+        return function(number) { 
+            return Math.pow(number, pow);;
+        }
+    },    
+}
+
+String.prototype.firstToUppercase = function() {
+    return this[0].toUpperCase() + this.slice(1);
 }
